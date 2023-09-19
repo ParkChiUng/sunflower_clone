@@ -14,9 +14,13 @@ import com.copy.sunflower.compose.SunflowerApp
 import com.copy.sunflower.compose.home.SunflowerPage
 import com.copy.sunflower.viewmodels.PlantListViewModel
 import com.google.accompanist.themeadapter.material.MdcTheme
+import android.util.Log
+import androidx.activity.compose.setContent
+import dagger.hilt.android.AndroidEntryPoint
 
 //import androidx.compose.material.MaterialTheme
 
+@AndroidEntryPoint
 class GardenActivity : AppCompatActivity() {                    // AppCompatActivity : action bar 사용 및 오래된 안드로이드 버전에도 사용할 수 있게 지원
 
     private val viewModel: PlantListViewModel by viewModels()   // by viewModels를 사용하면 viewModelProvider를 사용하지않고 viewModel을 지연 생성한다.
