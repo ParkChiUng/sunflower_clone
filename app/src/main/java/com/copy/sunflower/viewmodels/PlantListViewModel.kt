@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import dagger.hilt.android.lifecycle.HiltViewModel
 
-@HiltViewModel
+@HiltViewModel                                              // viewModel
 class PlantListViewModel @Inject internal constructor(
     plantRepository: PlantRepository,
     private val savedStateHandle: SavedStateHandle

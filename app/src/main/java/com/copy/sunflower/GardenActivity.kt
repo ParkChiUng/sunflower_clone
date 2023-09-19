@@ -66,7 +66,7 @@ class GardenActivity : AppCompatActivity() {                    // AppCompatActi
                                 )
                             }
                         },
-                        plantListViewModel = viewModel,                            // 식물 목록 관련 뷰모델을 설정
+                        plantListViewModel = viewModel,                            // 식물 목록 관련 뷰 모델을 설정
                     )
                 }
             }

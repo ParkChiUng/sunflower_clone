@@ -12,7 +12,7 @@ data class Plant(
     val name: String,
     val description: String,
     val growZoneNumber: Int,
-    val wateringInterval: Int = 7, // how often the plant should be watered, in days
+    val wateringInterval: Int = 7, // 식물에 물을 주는 간격 (기본값은 7일)
     val imageUrl: String = ""
 ) {
     fun shouldBeWatered(since: Calendar, lastWateringDate: Calendar) =

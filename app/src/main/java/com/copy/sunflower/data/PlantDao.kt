@@ -5,7 +5,7 @@ import androidx.room.Query
 import androidx.room.Upsert
 import kotlinx.coroutines.flow.Flow
 
-@Dao
+@Dao                        // Room 데이터베이스에 액세스할 수 있는 DAO(Data Access Object) 인터페이스를 정의
 interface PlantDao {
     @Query("SELECT * FROM plants ORDER BY name")
     fun getPlants(): Flow<List<Plant>>
