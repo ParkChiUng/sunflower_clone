@@ -28,7 +28,7 @@ fun SunflowerApp(
     plantListViewModel: PlantListViewModel = hiltViewModel(),
 
 ) {
-    val navController = rememberNavController()
+    val navController = rememberNavController()   // NavController : 화면간 이동
     SunFlowerNavHost(
         plantListViewModel = plantListViewModel,
         navController = navController,
@@ -44,12 +44,12 @@ fun SunFlowerNavHost(
     onAttached: (Toolbar) -> Unit = {},
     plantListViewModel: PlantListViewModel = hiltViewModel(),
 ) {
-    val activity = (LocalContext.current as Activity)
-    NavHost(navController = navController, startDestination = "home") {
+    val activity = (LocalContext.current as Activity)               // 현재 컨텍스트를 Activity로 변환하고 activity 변수에 저장
+    NavHost(navController = navController, startDestination = "home") {  // 시작 화면 home으로 설정
         composable("home") {
             HomeScreen(
                 onPlantClick = {
-                    navController.navigate("plantDetail/${it.plantId}")
+                    navController.navigate("plantDetail/${it.plantId}") // 식물 클릭 시 해당 식물의 상세 정보 이동
                 },
                 onPageChange = onPageChange,
                 onAttached = onAttached,
@@ -57,7 +57,7 @@ fun SunFlowerNavHost(
             )
         }
         composable(
-            "plantDetail/{plantId}",
+            "plantDetail/{plantId}",                // 식물 id의 상세 정보 화면
             arguments = listOf(navArgument("plantId") {
                 type = NavType.StringType
             })
@@ -68,12 +68,12 @@ fun SunFlowerNavHost(
                     createShareIntent(activity, it)
                 },
                 onGalleryClick = {
-                    navController.navigate("gallery/${it.name}")
+                    navController.navigate("gallery/${it.name}") // 갤러리 클릭 시 해당 식물의 갤러리 화면 이동
                 }
             )
         }
         composable(
-            "gallery/{plantName}",
+            "gallery/{plantName}",                  // 식물 이름의 갤러리
             arguments = listOf(navArgument("plantName") {
                 type = NavType.StringType
             })
