@@ -14,10 +14,10 @@ import javax.inject.Inject
 import dagger.hilt.android.lifecycle.HiltViewModel
 
 @HiltViewModel                                              // viewModel
-class PlantListViewModel @Inject internal constructor(
+class PlantListViewModel @Inject internal constructor(      // 의존성 주입가능한 클래스, 생성자는 같은 모듈에서만 접근 가능
     plantRepository: PlantRepository,
-    private val savedStateHandle: SavedStateHandle
-) : ViewModel() {
+    private val savedStateHandle: SavedStateHandle          // 구성 변경 및 프로세스 재생성 전번에 걸쳐도 데이터 유지. 앱 닫았다 나중에 열어도 ui 유지
+) : ViewModel() {                                           // ViewModel 상속
 
     private val growZone: MutableStateFlow<Int> = MutableStateFlow(
         savedStateHandle.get(GROW_ZONE_SAVED_STATE_KEY) ?: NO_GROW_ZONE

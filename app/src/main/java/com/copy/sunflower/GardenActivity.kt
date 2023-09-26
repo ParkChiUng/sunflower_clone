@@ -21,9 +21,9 @@ import dagger.hilt.android.AndroidEntryPoint
 //import androidx.compose.material.MaterialTheme
 
 @AndroidEntryPoint
-class GardenActivity : AppCompatActivity() {                    // AppCompatActivity : action bar 사용 및 오래된 안드로이드 버전에도 사용할 수 있게 지원
+class GardenActivity : AppCompatActivity() {                    // AppCompatActivity : 지원 라이브러리 테마 등 ui관련 호환성으로 구형 단말기에도 신규 api를 호환하게 해준다.
 
-    private val viewModel: PlantListViewModel by viewModels()   // by viewModels를 사용하면 viewModelProvider를 사용하지않고 viewModel을 지연 생성한다.
+    private val viewModel: PlantListViewModel by viewModels()   // 내부 viewModelProvider를 사용하여 viewModel을 지연 생성한다.
 
     private val menuProvider = object : MenuProvider {          // 메뉴를 생성
         override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {

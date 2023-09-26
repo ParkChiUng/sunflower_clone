@@ -26,6 +26,7 @@ fun SunflowerApp(
     onPageChange: (SunflowerPage) -> Unit = {},
     onAttached: (Toolbar) -> Unit = {},
     plantListViewModel: PlantListViewModel = hiltViewModel(),
+
 ) {
     val navController = rememberNavController()
     SunFlowerNavHost(
